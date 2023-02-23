@@ -69,13 +69,14 @@ function setAlarm() {
    }
 
    let time = `${selectMenu[0].value}:${selectMenu[1].value} ${selectMenu[2].value}`
+   content.classList.add('disable')
 
    if (time.includes('Hour') || time.includes('Minute') || time.includes('AM/PM')) {
       alert('Iltimos vaqtni kiriting...')
+      content.classList.remove('disable')
    }
    isAlarmSet = true
    alarmTime = time
-   content.classList.add('disable')
    setAlarmBtn.innerHTML = `Clear Alarm <i class="fa-solid fa-xmark"></i>`
 }
 

@@ -86,7 +86,7 @@ body::before {
 .content .column {
    border-radius: 5px;
    padding: 0 10px;
-   border: 1px solid #999;
+   border: 2px solid #777;
    width: calc(100 / 3 - 5px);
 }
 
@@ -129,6 +129,10 @@ body::before {
    .content {
       flex-direction: column;
       gap: 10px;
+   }
+
+   .column {
+      width: 100%;
    }
 }
 
