@@ -29,18 +29,19 @@ body::before {
    left: 0;
    top: 0;
    width: 100%;
-   height: 100%;
+   height: 100vh;
    background-color: rgba(0, 0, 0, 0.6);
    z-index: 1;
 }
 
 .wrapper {
    width: 440px;
-   background: #fff;
+   background: #ffffff9c;
    border-radius: 10px;
    flex-direction: column;
    padding: 30px 30px 38px;
    z-index: 10;
+   margin: 0 20px;
 }
 
 .wrapper img {
@@ -95,6 +96,7 @@ body::before {
    height: 53px;
    width: 100%;
    font-size: 19px;
+   background: transparent;
 }
 
 .wrapper button {
@@ -108,4 +110,35 @@ body::before {
    padding: 17px 0;
    border-radius: 5px;
    background: #4a98f7;
+   position: relative;
+   transition: 0.5s;
+   overflow: hidden;
+}
+
+.wrapper button span {
+   position: absolute;
+   border: 4px solid #fff;
+   transform: translate(-50%, -50%);
+   pointer-events: none;
+   border-radius: 50%;
+   filter: brightness(2);
+   animation: colorFull 2s linear infinite;
+}
+
+@media only screen and (max-width: 540px) {
+   .content {
+      flex-direction: column;
+      gap: 10px;
+   }
+}
+
+@keyframes colorFull {
+   0% {
+      width: 0;
+      height: 0;
+   }
+   100% {
+      width: 350px;
+      height: 350px;
+   }
 }

@@ -71,7 +71,7 @@ function setAlarm() {
    let time = `${selectMenu[0].value}:${selectMenu[1].value} ${selectMenu[2].value}`
 
    if (time.includes('Hour') || time.includes('Minute') || time.includes('AM/PM')) {
-      alert('Please, select a valid time to set Alarm')
+      alert('Iltimos vaqtni kiriting...')
    }
    isAlarmSet = true
    alarmTime = time
@@ -80,3 +80,25 @@ function setAlarm() {
 }
 
 setAlarmBtn.addEventListener('click', setAlarm)
+
+
+
+let btn = document.querySelectorAll('.btn')
+      btn.forEach(btn => {
+         btn.onclick = function(e) {
+            let x = e.pageX - e.target.offsetLeft
+            let y = e.pageY - e.target.offsetTop
+
+            let color = "#" + Math.floor(Math.random() * 0xFFFFFF).toString(16)
+
+            let ripples = document.createElement('span')
+            ripples.style.left = x +'px'
+            ripples.style.top = y +'px'
+            ripples.style.borderColor = color
+            this.appendChild(ripples)
+
+            setTimeout(() => {
+               ripples.remove()
+            }, 2000);
+         }
+      });
